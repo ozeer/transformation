@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	// data
+	// data 数据初始化
 	person := data.NewPerson("John", "Doe", "London", time.Date(1980, 1, 1, 0, 0, 0, 0, time.UTC), 1.8, 80)
 
 	// transformations
@@ -20,7 +20,8 @@ func main() {
 
 	// Create a pipeline
 	p1 := pipeline.NewPipeline("Transform name, surname and city")
-	// Add stages to the pipeline
+	// Add stages to the pipeline（注意AddStage的第二个传入参数：该transformation参数应是实现接口transformer.Transformer的转换器，
+	// ToUpper和JoinStrings实现了transformer.Transformer接口的Transform方法）
 	p1.
 		AddStage("transform name to uppercase", nameToUppercase).
 		AddStage("transform surname to uppercase", surnameToUppercase).
