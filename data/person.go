@@ -8,8 +8,8 @@ import "time"
 // 我们定义了两个结构，Person 和 PersonTreated。前者代表一个人的基本信息，
 // 后者在经过我们的管道处理和丰富后，会保存一个人的信息。
 type Person struct {
-	Name        string
-	Surname     string
+	Name        string // 名
+	Surname     string // 姓
 	City        string
 	DateOfBirth time.Time
 	Height      float64
